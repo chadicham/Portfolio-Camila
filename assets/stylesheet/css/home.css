@@ -1,0 +1,669 @@
+/* Importation de la police personnalisée */
+@font-face {
+    font-family: 'Delicate Caligraphy Demo';
+    src: url('assets/fonts/Delicate Caligraphy Demo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+    background-color: rgb(255, 249, 239);
+}
+
+body.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards;
+}
+
+/* Styles pour le bouton de retour à l'introduction */
+.back-to-intro {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.back-button {
+    display: inline-block;
+    color: #000000;
+    font-size: 1.2em;
+    text-decoration: none;
+    border: 1px solid #000000;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Styles pour le header */
+.header {
+    padding: 100px 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Conteneur principal du header */
+.header-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+/* Cellule de texte du header à gauche */
+.header-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Titre principal du header */
+.header-title {
+    font-size: 1em;
+    margin: 0;
+    color: #333;
+    font-family: 'Delicate Caligraphy Demo', cursive;
+}
+
+/* Sous-titre principal du header */
+.header-main-title {
+    font-size: 7em;
+    margin: 100px 100px 100px 0px;
+    color: #000;
+    font-weight: normal;
+    font-family: 'Delicate Caligraphy Demo', cursive;
+}
+
+h3.latest-projects {
+    font-style: italic;
+    font-weight: 100;
+}
+
+/* Paragraphe d'introduction */
+.header-intro {
+    flex: 1;
+    font-size: 1.5em;
+    color: #333;
+    line-height: 1.6;
+    font-family: 'Delicate Caligraphy Demo', cursive;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Sous-titre des derniers projets */
+.latest-projects {
+    font-size: 2em;
+    margin-top: 20px;
+    color: #333;
+    font-weight: bold;
+    font-family: 'Delicate Caligraphy Demo', cursive;
+}
+
+/* Styles pour les projets */
+.projects {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.project {
+    margin: 25% 0;
+    /*border-bottom: 2px solid #ddd;*/
+    padding-bottom: 30px;
+
+}
+.project img {
+    max-width: 100%;
+}
+
+.project .project-details h2{
+    font-weight: 100;
+}
+
+/* Style projet 1*/
+
+#project1 .project-details h2 {
+    font-size: 5rem;
+}
+
+#project1 .project-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes */
+    grid-template-rows: auto auto;  /* Deux lignes */
+    grid-gap: 0px;
+    }
+
+#project1 .project-details .text-project1{
+    display: grid;
+    grid-template-columns: 1fr ;
+    grid-template-rows: auto auto;  /* Deux lignes */
+    grid-gap: 0px;
+    height: 0;
+    }
+
+#project1 .project-details p {
+    margin: 10px 0 0 0;
+}
+
+#project1 .project-details #tech1{
+    grid-column: 1/3;
+    grid-row: 2/3;
+    margin: 0;
+}
+#project1 .project-details #render1{
+    grid-column: 1/3;
+    grid-row: 3/4;
+    margin: 0;
+}
+
+
+/*projet 2*/
+#project2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes : texte à gauche, image à droite */
+    grid-template-rows: auto 1fr; /* Deux lignes : une pour le titre "02", une pour le reste */
+    gap: 20px;
+    align-items: start;
+}
+
+#project2 #N02 {
+    grid-column: 2 / 3; /* Titre "02" dans la deuxième colonne */
+    grid-row: 1 / 2; /* Sur la première ligne */
+    justify-self: start; /* Aligner le titre à gauche dans sa colonne */
+    margin: 0; /* Enlever les marges par défaut */
+}
+
+#project2 img {
+    grid-column: 2 / 3; /* Image dans la deuxième colonne */
+    grid-row: 2 / 3; /* L'image est dans la deuxième ligne */
+    width: 90%; /* Augmenter la taille de l'image à 75% */
+}
+
+#project2 .project-details {
+    grid-column: 1 / 2; /* Texte dans la première colonne */
+    grid-row: 2 / 3; /* Texte dans la deuxième ligne */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Aligner le contenu en bas de la cellule */
+    align-self: end; /* Assurez que toute la boîte des détails est en bas de la cellule */
+}
+
+
+#project2 .project-details h2 {
+    margin: 0; /* Enlever les marges pour un meilleur alignement */
+    font-size: 5rem;
+}
+
+#project2 .project-details p {
+    margin: 5px 0 0; /* Espace entre les paragraphes */
+}
+
+
+/*Projet 3*/
+#project3 {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+#project3 .project-number {
+    font-size: 1.5em;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    margin: 0 0 10px 0;
+}
+
+#project3 .project-title {
+    font-size: 5em;
+    font-weight: lighter;
+    top: 50px;
+    left: 10px;
+    margin: 0;
+    z-index: 1;
+}
+
+#project3 .project-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#project3 .project-link:hover .project-image {
+    transform: scale(1.02);
+}
+
+#project3 .project-details {
+    margin-top: 0;
+    font-size: 1em;
+}
+#project3 .project-details p{
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+#project3 .project-details #tech3{
+    grid-column: 2/3;
+    margin: 0;
+}
+
+#project3 .project-details #render3{
+    grid-column: 3/4;
+    margin: 0;
+}
+
+/* Projet 4 */
+#project4 {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Deux colonnes : image à gauche, texte à droite */
+    grid-template-rows: auto auto auto; /* Une ligne pour le contenu */
+    align-items: start;
+}
+
+.image-title-container {
+    display: grid;
+    grid-template-columns: auto; /* Une colonne pour l'image et le titre */
+    grid-template-rows: auto auto; /* Deux lignes : titre au-dessus de l'image */
+    grid-column: 1 / 2; /* L'image et le titre dans la première colonne */
+    grid-row: 1 / 2; /* Sur la première ligne */
+    gap: 10px; /* Espacement entre le titre et l'image */
+}
+
+#project4 #N04 {
+    justify-self: start; /* Aligner le titre à gauche */
+    margin: 0; /* Enlever les marges par défaut */
+}
+
+#project4 img {
+    width: 100%; /* Ajuster la largeur de l'image pour qu'elle prenne toute la largeur de la colonne */
+    height: auto; /* Conserver les proportions de l'image */
+}
+
+#project4 .project-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Aligner le contenu en bas de la cellule */
+    align-items: flex-start; /* Aligner le contenu à gauche de la cellule */
+    height: 100%; /* Assure que la hauteur de la cellule est prise en compte */
+    padding: 20px; /* Ajouter du padding pour éviter que le texte ne touche les bords */
+}
+
+
+#project4 p {
+    margin-bottom: 0;
+}
+
+#project4 .project-details h2 {
+    font-size: 5rem;
+}
+
+#project4 #tech4 {
+    grid-row: 3/3;
+    margin: 0;
+}
+
+#project4 #render4 {
+    grid-row: 4/4;
+    margin: 0;
+}
+
+/* Projet 5*/
+#project5 {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Deux colonnes : texte à gauche, image à droite */
+    grid-template-rows: auto auto auto; /* Deux lignes : une pour le titre "02", une pour le reste */
+    gap: 0;
+    align-items: start;
+}
+
+#project5 #title5 {
+    font-size: 5em;
+    margin-bottom: 0;
+    font-weight: 100;
+}
+
+#project5 #N05 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2; /* Place "N05" dans la première ligne de la deuxième colonne */
+    justify-self: start; /* Aligner le titre à gauche */
+    align-self: end; /* Aligner le titre en bas */
+    margin-bottom: 10px;
+}
+
+#project5 .project-details p{
+    margin-bottom: 0;
+}
+
+#project5 .right5 {
+    grid-column: 2 / 3; 
+    grid-row: 2 / 3; 
+    justify-self: start; /* Aligner le titre à gauche dans sa colonne */}
+
+#project5 #tech5 {
+        grid-row: 3/3;
+        margin: 0;
+}
+    
+ #project5 #render5 {
+        grid-row: 4/4;
+        margin: 0;
+}
+
+/*Project 6*/
+
+#project6 .project-details h2{
+    font-size: 5em;
+}
+
+#project6 .project-details p{
+    margin: 0;
+}
+
+/* Styles spécifiques pour le projet 7 avec deux images */
+#project7 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    row-gap: 0;
+    column-gap: 20px;
+}
+
+
+#project7 .project-details {
+    display: grid;
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    font-size: 2rem;
+}
+
+#project7 .project-details h2 {
+    display: grid;
+    font-size: 5rem;
+    font-weight: lighter;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#N7 {
+    font-size: 1.5rem;
+    grid-row: 1;
+    grid-column: 1 / 2;
+}
+
+
+#project7 .project-images {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+#project7 .project-images img:first-child {
+    justify-self: end;
+    align-self: start;
+}
+
+#project7 .project-images img:last-child {
+    justify-self: start;
+    align-self: end;
+}
+
+#project7 .project-images img {
+    width: auto;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#project7 .project-images img:hover {
+    transform: scale(1.02);
+}
+
+#project7 .project-description {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    align-self: end;
+    font-size: 1.3em;
+    color: #666;
+}
+
+#project7 .project-description p{
+    margin-bottom: 0;
+}
+
+#project7 .project-description #tech7, #render7{
+margin: 0;
+}
+
+/*projet 8 */
+/* Grid pour la section #project8 */
+#project8 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes de taille égale */
+    grid-template-rows: auto auto auto; /* Trois lignes : titre, image, description */
+    row-gap: 0px; /* Espacement entre les éléments */
+    column-gap: 20px;
+    align-items: start;
+}
+
+#project8 .titre8 h2{
+    font-size: 5rem;
+    font-weight: lighter;
+    margin: 0;
+}
+
+/* Styles pour le titre et le sous-titre */
+#project8 .title {
+    grid-column: 1 / 2; /* Colonne 1 */
+    grid-row: 1 / 2; /* Ligne 1 */
+}
+
+/* Positionnement du numéro de projet (08) au-dessus de l'image */
+#project8 #N8 {
+    grid-column: 2 / 3; /* Colonne 2 */
+    grid-row: 1 / 2; /* Ligne 1 */
+    align-self: end; /* Aligner le numéro vers le bas */
+}
+
+/* Positionnement de l'image */
+#project8 img {
+    grid-column: 2 / 3; /* Colonne 2 */
+    grid-row: 2 / 3; /* Ligne 2 */
+    width: 100%; /* S'adapte à la taille de la colonne */
+    height: auto; /* Conserver les proportions de l'image */
+}
+
+/* Positionnement de la description */
+#project8 .project-details {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+#project8 .project-details p{
+    margin: 0;
+}
+
+
+
+
+/*projet 9
+/* Mise en page spécifique pour le projet 9 avec deux images */
+#project9 {
+    display: grid;
+    grid-template-columns: 50% auto; /* La première colonne prend 25%, la deuxième prend le reste */
+    grid-template-rows: auto auto auto; /* Trois rangées : titres, images, description */
+    row-gap: 0px; /* Espace entre les éléments */
+    column-gap: 20px; /* Espace entre les éléments */
+    padding: 20px;
+    position: relative;
+}
+
+/* Titre 'SUNGLASSES' en haut à gauche */
+#project9 .title-sunglasses {
+    grid-column: 1 / 2;
+    grid-row: 1;
+    font-size: 5rem;
+    font-family: 'Delicate Caligraphy Demo', cursive;
+    font-weight: lighter;
+    margin: 0;
+    color: #000; /* Couleur de texte */
+}
+
+/* Le numéro '09' en dessous du titre avec un espacement */
+#project9 .N09 {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-family: 'Delicate Caligraphy Demo', cursive;
+    color: #000; /* Couleur de texte */
+}
+
+/* Image large (lunettesss.jpg) prenant 25% de la largeur */
+#project9 .img-large {
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%; /* Pour occuper toute la colonne (25%) */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Image plus petite (lunettes.jpg) à droite de l'image principale */
+#project9 .img-small {
+    grid-column: 2;
+    grid-row: 3;
+    width: 80%; /* Ajuster la taille de l'image plus petite */
+    height: auto;
+    justify-self: start; /* Aligner à gauche dans la colonne */
+    align-self: end; /* Aligner l'image au bas de la cellule */
+}
+
+#project9 .project-details{
+    grid-row: 3;
+    flex-direction: column;
+    grid-column: 2;
+    line-height: 0;
+}
+
+/* Styles spécifiques pour le projet 9 */
+#project9 .img-large,
+#project9 .img-small {
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 3;
+}
+
+#project9 .img-large:hover,
+#project9 .img-small:hover {
+    transform: scale(1.02);
+}
+
+ /*Projet10*/
+ #project10 .project-title{
+    font-size: 5rem;
+    font-weight: lighter;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+ }
+
+ #project10 .project-details{
+    line-height: 0;
+ }
+
+/* Titre du projet */
+.project-details h2 {
+    font-size: 2em;
+    margin: 10px 0;
+    color: #000;
+    font-family: 'Delicate Caligraphy Demo', cursive;
+}
+
+/* Description du projet */
+.project-details p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.project-details strong {
+    font-weight: bold;
+}
+
+/* Styles pour le footer */
+/*/* Styles pour le footer */
+footer {
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.copyright, .contact-info {
+    flex: 1;
+    min-width: 300px;
+    padding: 0 20px;
+}
+
+.contact-info h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-family: 'Delicate Caligraphy Demo', cursive;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.contact-info a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .copyright, .contact-info {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

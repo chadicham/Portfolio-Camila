@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villa Pully - Portfolio</title>
+    <link rel="stylesheet" href="assets/stylesheet/css/style.css">
+    <link rel="stylesheet" href="assets/stylesheet/css/villa.css">
+    <link rel="stylesheet" href="./assets/photoswipe/photoswipe.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="back-to-home">
+            <a href="home.html" class="back-button">Back to Portfolio</a>
+        </div>
+        <h1>Villa Pully</h1>
+    </header>
+    <main>
+        <section class="villa-gallery" id="villa-gallery">
+            <a href="assets/images/VILLA PULLY/path/villalarge.jpg" data-pswp-width="1600" data-pswp-height="900" target="_blank">
+                <img src="assets/images/VILLA PULLY/path/villalarge.jpg" alt="Villa Pully - Large View" class="gallery-image">
+            </a>
+            <a href="assets/images/VILLA PULLY/path/terrasse.jpg" data-pswp-width="1600" data-pswp-height="900">
+                <img src="assets/images/VILLA PULLY/path/terrasse.jpg" alt="Villa Pully - Large View" class="gallery-image">
+            </a>
+            <a href="assets/images/VILLA PULLY/path/salleamanger.jpg" data-pswp-width="1600" data-pswp-height="900">
+                <img src="assets/images/VILLA PULLY/path/salleamanger.jpg" alt="Villa Pully - View 1" class="gallery-image">
+            </a>
+            <a href="assets/images/VILLA PULLY/path/salon.jpg" data-pswp-width="1600" data-pswp-height="900">
+                <img src="assets/images/VILLA PULLY/path/salon.jpg" alt="Villa Pully - View 2" class="gallery-image">
+            </a>
+            <a href="assets/images/VILLA PULLY/path/hall.jpg" data-pswp-width="1600" data-pswp-height="900">
+                <img src="assets/images/VILLA PULLY/path/hall.jpg" alt="Villa Pully - View 3" class="gallery-image">
+            </a>
+            <a href="assets/images/VILLA PULLY/path/exterieur.jpg" data-pswp-width="1600" data-pswp-height="900">
+                <img src="assets/images/VILLA PULLY/path/exterieur.jpg" alt="Villa Pully - View 3" class="gallery-image">
+            </a>
+        </section>
+    </main>
+      
+    <footer>
+        <p>&copy; 2024 Camila Flores Justiniano. Tous droits réservés.</p>
+    </footer>
+    <script type="module" src="./assets/photoswipe/photoswipe-lightbox.esm.min.js"></script>
+    <script type="module" src="./assets/photoswipe/photoswipe.esm.min.js"></script>
+    <script type="module">
+        import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
+        
+        const lightbox = new PhotoSwipeLightbox({
+          gallery: '.villa-gallery',       // Sélecteur de la galerie
+          children: 'a',                   // Sélecteur des éléments enfants (liens)
+          pswpModule: () => import('./assets/photoswipe/photoswipe.esm.min.js') // Module PhotoSwipe
+        });
+        
+        lightbox.init();
+      </script>
+      
+</body>
+</html>
