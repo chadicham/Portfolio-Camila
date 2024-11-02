@@ -1,7 +1,7 @@
 /* Importation de la police personnalisée */
 @font-face {
-    font-family: 'Delicate Caligraphy Demo';
-    src: url('assets/fonts/Delicate Caligraphy Demo.ttf') format('truetype');
+    font-family: 'DelicateCaligraphyDemo';
+    src: url('assets/fonts/DelicateCaligraphyDemo.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -12,10 +12,142 @@ body {
     background-color: rgb(255, 249, 239);
 }
 
-body.fade-in {
+.fade-out {
     opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards;
+    transition: opacity 0.5s ease;
 }
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.intro-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.intro-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.main-content {
+    display: none; /* Caché initialement */
+    width: 100%;
+    min-height: 100vh; /* Assure que le contenu prend au moins toute la hauteur de la fenêtre */
+}
+
+
+.intro-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.intro-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.intro-text {
+    position: relative;
+    text-align: center;
+    color: #FFF;
+    z-index: 2;
+}
+
+.intro-text h1 {
+    font-family: 'Delicate Caligraphy Demo', cursive;
+    font-size: 6em;
+    font-weight: 100;
+    margin: 0;
+    letter-spacing: 0.3em;
+}
+
+.intro-text p {
+    font-family: 'Delicate Caligraphy Demo', cursive;
+    font-size: 1.9em;
+    margin: 10px 0 20px;
+}
+
+.enter-site {
+    position: absolute;
+    bottom: -25vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFF;
+    font-size: 1em;
+    letter-spacing: 0.3em;
+    text-decoration: none;
+    border: 2px solid #FFF;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.enter-site:hover {
+    background-color: #FFF;
+    color: #000;
+}
+
+/* Nouvelle classe pour l'animation de transition */
+.transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 249, 239);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.transition-active .transition-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.transition-active .intro-container {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+
+
+
 
 /* Styles pour le bouton de retour à l'introduction */
 .back-to-intro {
@@ -501,7 +633,6 @@ margin: 0;
 
 
 
-
 /*projet 9
 /* Mise en page spécifique pour le projet 9 avec deux images */
 #project9 {
@@ -606,7 +737,6 @@ margin: 0;
 }
 
 /* Styles pour le footer */
-/*/* Styles pour le footer */
 footer {
     padding: 20px 0;
     margin-top: 40px;
@@ -644,8 +774,131 @@ footer {
     transition: color 0.3s ease;
 }
 
+/* Styles de base (pour tous les écrans) */
 
-@media (max-width: 768px) {
+/* Ajustements pour les tablettes */
+@media screen and (max-width: 1024px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    .header-main-title {
+        font-size: 5em;
+    }
+
+    .header-intro {
+        font-size: 1.2em;
+    }
+
+    .projects {
+        width: 90%;
+    }
+}
+
+
+
+/* Ajustements pour les petits mobiles */
+@media screen and (max-width: 480px) {
+    .header-main-title {
+        font-size: 2.5em;
+    }
+
+    .latest-projects {
+        font-size: 1.5em;
+    }
+
+    .project img {
+        width: 100%;
+    }
+
+    #project2, #project4, #project5 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #project7 .project-images {
+        flex-direction: column;
+    }
+
+    #project9 {
+        grid-template-columns: 1fr;
+    }
+
+    /*projet 2*/
+    #project2 img{
+        display: flex;
+        align-items: center;
+    }
+
+    /*Projet 7*/
+    #project7 {
+        display: block;
+    }
+
+    /*Projet 8*/
+    #project8 img {
+        grid-column: 1 / 3;
+        grid-row: 3 / 3;
+    }
+
+    #project8 #N8{
+        grid-row: 2;
+    }
+
+    /*Projet 9*/
+    #project9{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    #project9 .img-small {
+        width: 100%;
+    }
+}
+
+/* Ajustements pour les mobiles */
+@media screen and (max-width: 768px) {
+    .header-main-title {
+        font-size: 3em;
+    }
+
+    .header-intro {
+        font-size: 1em;
+    }
+
+    .project {
+        margin: 15% 0;
+    }
+
+    #project1 .project-details h2,
+    #project2 .project-details h2,
+    #project5 #title5 {
+        font-size: 3rem;
+    }
+
+    .enter-site {
+        bottom: -15vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #project2, #project4, #project5, #project8 {
+        grid-template-columns: 1fr;
+    }
+
+    #project7 .project-images {
+        grid-template-columns: 1fr;
+    }
+
+    #project9 {
+        grid-template-columns: 1fr;
+    }
+
+    .project-details {
+        order: -1; /* Place les détails au-dessus de l'image sur mobile */
+    }
+
     .footer-content {
         flex-direction: column;
         align-items: center;
@@ -655,7 +908,39 @@ footer {
         text-align: center;
         margin-bottom: 20px;
     }
+    
+    body {
+        font-size: 16px;
+    }
+
+    .header-title {
+        font-size: 0.8em;
+    }
+
+    .header-main-title {
+        margin: 50px 0;
+    }
+
+    .project-details p {
+        font-size: 1em;
+    }
+
+    .intro-video {
+        object-fit: cover;
+    }
+
+    .intro-text h1 {
+        font-size: 3em;
+    }
+
+    .intro-text p {
+        font-size: 1.5em;
+    }
+    
 }
+
+
+
 
 
 
