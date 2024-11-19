@@ -3,29 +3,54 @@ document.addEventListener('DOMContentLoaded', function() {
     const backButton = document.getElementById('back-to-intro');
     const introSection = document.querySelector('.intro-section');
     const mainContent = document.querySelector('.main-content');
+    const navbar = document.querySelector('.fixed-navbar');
 
     function showIntro() {
+        // Cache la navbar pendant l'intro
+        if (navbar) {
+            navbar.style.display = 'none';
+        }
+        
+        // Affiche l'intro
+        introSection.style.display = 'flex'; // Utilise flex au lieu de block pour le centrage
         introSection.classList.remove('intro-hidden');
         mainContent.style.display = 'none';
         document.body.style.overflow = 'hidden'; // Empêche le défilement
     }
 
     function showContent() {
+        // Affiche la navbar
+        if (navbar) {
+            navbar.style.display = 'block';
+            navbar.style.opacity = '0';
+            setTimeout(() => {
+                navbar.style.opacity = '1';
+            }, 100);
+        }
+
+        // Masque l'intro et affiche le contenu principal
         introSection.classList.add('intro-hidden');
+        mainContent.classList.remove('hidden'); // Retire la classe hidden
         mainContent.style.display = 'block';
         document.body.style.overflow = ''; // Réactive le défilement
-        window.scrollTo(0, 0); // Assure que la page est au top
+        window.scrollTo(0, 0);
+
+        // Une fois la transition terminée, cache complètement l'intro
+        setTimeout(() => {
+            introSection.style.display = 'none';
+        }, 800);
     }
 
-    // Initialisation : afficher l'intro au chargement de la page
+    // Initialisation
     showIntro();
 
-    // Gérer le clic sur le bouton "Explore"
+    // Event listeners
     enterButton.addEventListener('click', showContent);
-
-    // Gérer le clic sur "Back to Welcome Page"
-    backButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        showIntro();
-    });
-});
+    
+    if (backButton) {
+        backButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            showIntro();
+        });
+    }
+}); 

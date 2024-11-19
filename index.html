@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="assets/stylesheet/css/style.css">
     <link rel="stylesheet" href="assets/stylesheet/css/home.css">
     <link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body class="fade-in">
+    <!-- Section intro -->
     <div class="intro-section">
         <div class="video-container">
-            <video autoplay muted loop class="intro-video">
+            <video autoplay muted loop playsinline class="intro-video">
                 <source src="assets/images/tablerondejardin/video.mp4" type="video/mp4">
                 Votre navigateur ne supporte pas la vidéo.
             </video>
@@ -24,92 +27,166 @@
     </div>
 
     <div class="main-content hidden">
-        <header class="header">
-            <div class="back-to-intro">
-                <a href="#" class="back-button" aria-label="Retour à la page d'accueil" id="back-to-intro">Back to Welcome Page</a>
-            </div>
-            <div class="header-content">
-                <div class="header-text">
-                    <h1 class="header-title">Camila FLORES JUSTINIANO</h1>
-                    <h2 class="header-main-title">PORTFOLIO</h2>
-                    <h3 class="latest-projects">Latest projects</h3>
+        <!-- Navbar fixe -->
+        <nav class="fixed-navbar">
+            <div class="navbar-content">
+                <div class="left-column">
+                    <div class="name-box">
+                        <div class="name">
+                            <p>Camila</p>
+                            <p>Flores J.</p>
+                        </div>
+                    </div>
+                    <div class="contact-links">
+                        <a href="mailto:camilaflores.j26@gmail.com">camilaflores.j26@gmail.com</a>
+                        <a href="https://www.linkedin.com/in/camila-flores-justiniano-73b4b0182/">Linkedin</a>
+                    </div>
                 </div>
-                <div class="header-intro">
-                    <p>
-                        Hi, my name is Camila, I am a young Designer based in Geneva, Switzerland with a diploma in 3D Design. I am passionate about interior decoration and furniture design, and I am dedicated to creating innovative and functional spaces through my work.
-                        <br><br>
-                        Here is a selection of my projects I did in the last few years.
-                    </p>
-                </div>
-            </div>
-        </header>
-    <main>
-        <section class="projects">
-            <div class="project" id="project1">
-                <h2>01</h2>
-                <img src="assets/images/tablelonguevage/bancwave.jpg" alt="Wave-shaped wooden table with integrated bench and plants, designed for Geneva's parks">
-                <div class="project-details">
-                    <h2>WAVE-SHAPED TABLE</h2>
-                    <div class="text-project1">
-                        <p>Winner of the urban kit competition organized by the St-Gervais association
-                            in Geneva. The Wave-Shaped Table was a project during my final school year,
-                            aimed at creating seating for Geneva’s parks.</p>
-                        <p id="tech1">Modeling : Rhinoceros</p>
-                        <p id="render1">Rendering :Twinmotion</p>   
-                    </div>                     
+                
+                <div class="presentation">
+                    <p class="intro-text">Hi ! My name is Camila, I am a young Designer based in Geneva, Switzerland with a diploma in 3D
+                        Design. I am passionate about interior decoration and furniture design, and I am dedicated to
+                        creating innovative and functional spaces through my work.</p>
+                    <p class="projects-intro">Here is a selection of my projects I did in the last few years.</p>
                 </div>
             </div>
-            <div class="project" id="project2">
-                <h2 id="N02">02</h2>
+        </nav>
+
+        <main>
+            <section class="projects">
+                <!-- Projet 1 - Wavy Table -->
+                <div class="project wavy-table">
+                    <div class="project-header">
+                        <h2>01.</h2>
+                        <h2 class="project-title">WAVY TABLE</h2>
+                    </div>
+                    <img src="assets/images/tablelonguevage/bancwave.jpg" alt="Wave-shaped wooden table with integrated bench and plants, designed for Geneva's parks">
+                    <div class="project-description">
+                        <p>Winner of the urban kit competition organized by the St-Gervais association in Geneva. The Wave-Shaped Table was a project during my final school year, aimed at creating seating for Geneva's parks.</p>
+                        <p class="tech">Modeling : Rhinoceros</p>
+                        <p class="render">Rendering : Twinmotion</p>
+                    </div>
+                </div>
+
+                <!-- Projet 2 - Cave à Vin -->
+                <div class="project wine-cellar">
+                    <div class="project-header">
+                        <h2>02.</h2>
+                        <h2 class="project-title">CAVE A VIN</h2>
+                    </div>
+                    <img src="assets/images/caveavin.jpeg" alt="3D custom-made wine cellar in light oak wood">
+                    <div class="project-description">
+                        <p>3D custom-made wine cellar in light oak wood, capable of holding 600 bottles of wine.</p>
+                        <p class="tech">Modeling : Sketchup</p>
+                        <p class="render">Rendering : Twinmotion</p>
+                    </div>
+                </div>
+
+            <!-- Night Table -->
+            <div class="project night-table">
+                <div class="project-header">
+                    <h2>03.</h2>
+                    <h2 class="project-title">NIGHT TABLE</h2>
+                </div>
                 <img src="assets/images/tabledechevet/tabledechevet.jpg" alt="Night table">
-                <div class="project-details">
-                    <h2>NIGHT TABLE</h2>
+                <div class="project-description">
                     <p>The night table was a personal project.</p>
-                    <p>Modeling : Rhinoceros</p>
-                    <p>Rendering : Keyshot</p>
+                    <p class="tech">Modeling : Rhinoceros</p>
+                    <p class="render">Rendering : Keyshot</p>
                 </div>
             </div>
-            <div class="project" id="project3">
-                <h3 class="project-title">VILLA PULLY</h3>
-                <h2 class="project-number">03</h2>
-                <a href="villa.html" class="project-link">
-                    <img src="assets/images/villapully/path/villalarge.jpg" alt="Villa Pully" class="project-image">
-                </a>
-                <div class="project-details">
+
+            <!-- Villa Pully -->
+            <div class="project villa-pully">
+                <div class="project-header">
+                    <h2>04.</h2>
+                    <h2 class="project-title">VILLA PULLY</h2>
+                </div>
+                
+                <img src="assets/images/villapully/path/villalarge.jpg" alt="Villa Pully - Vue extérieure" class="main-image">
+                
+                <div class="carousels-container">
+                    <!-- Premier carousel -->
+                    <div class="villa-swiper-left">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/images/villapully/path/terrasse.jpg" alt="Villa Pully - Terrace">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/villapully/path/salleamanger.jpg" alt="Villa Pully - Dining room">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/villapully/path/salon.jpg" alt="Villa Pully - Living room">
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+            
+                    <!-- Second carousel -->
+                    <div class="villa-swiper-right">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/images/villapully/path/hall.jpg" alt="Villa Pully - The entrance hall">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/villapully/path/cuisine.jpg" alt="Villa Pully - Kitchen">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/villapully/path/exterieur.jpg" alt="Villa Pully - view from swimingpool">
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="project-description">
                     <p>The Villa Pully was a project completed during my Archicad training at Asimco. The modeling was done in Archicad, and the rendering was done in twinmotion.</p>
-                    <p id="tech3">Modeling: Archicad</p>
-                    <p id="render3">Rendering: Twinmotion</p>
+                    <p class="tech">Modeling: Archicad</p>
+                    <p class="render">Rendering: Twinmotion</p>
                 </div>
             </div>
-            <div class="project" id="project4">
-                <div class="image-title-container">
-                    <h2 id="N04">04</h2>
+            
+            <div class="project three-seats">
+                <div class="project-header">
+                    <h2>05.</h2>
+                    <h2 class="project-title">3 SEATS</h2>
+                </div>
+                <div class="project-content">
                     <img src="assets/images/troismobiliers/troismobiliers.JPG" alt="Outdoor wooden seating">
+                    <div class="project-description">
+                        <p>Winner of the Oak Wood Urban Furniture competition organized by the Forêt Genève association. A range of furniture with multiple functions, ideal for public parks in the canton of Geneva.</p>
+                        <p class="tech">Modeling : Rhinoceros</p>
+                        <p class="render">Rendering : Twinmotion</p>
+                    </div>
                 </div>
-                <div class="project-details">
-                    <h2>3 SEATS</h2>
-                </div>
-                <p>Winner of the Oak Wood Urban Furniture competition organized by the Forêt Genève association. A range of furniture with multiple functions, ideal for public parks in the canton of Geneva.</p>
-                <p id="tech4">Modeling : Rhinoceros</p> 
-                <p id="render4"> Rendering : Twinmotion</p>
             </div>
              
-            <div class="project" id="project5">
-                <h2 id="title5">BIENALE PIPAS</h2>
-                <h2 id="N05">05</h2>
-            <div class="right5">
-                <img src="assets/images/bienale/bienale.jpg" alt="exhibition setup for multiple photographic">
+            <!-- Projet 6 - Living Room -->
+            <div class="project living-room">
+                <h2>06.</h2>
+                <img src="assets/images//livingroom.jpeg" alt="3D of a living room">
                 <div class="project-details">
-                    <p>Individual practical work in white an exhibition setup for multiple photographic narratives from the
-                        first edtion of the Bienale Pipas.</p>
-                    <p id="tech5">Modeling : Rhinoceros 
-                    <p id="render5">Rendering : Keyshot, Photoshop</p>
+                    <h2>LIVING ROOM</h2>
+                    <div class="text-project6">
+                        <p>3D of a living room.</p>
+                        <p id="tech6">Modeling : Archicad / Sketchup</p>
+                        <p id="render6">Rendering : Twinmotion</p>
+                    </div>
                 </div>
             </div>
-            </div>
+
             <div class="project" id="project6">
-                <h2 id="N06">06</h2>
-                <img src="assets/images/tablerondejardin/tableronde.jpg" alt="Outdoor round table">
+                <h2 id="N06">07.</h2>
+                <video autoplay muted loop>
+                    <source src="assets/images/tablerondejardin/video.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la vidéo.
+                </video>
                 <div class="project-details">
                     <h2>ROUND TABLE</h2>
                     <p>Personal project, a garden table.</p>
@@ -118,61 +195,54 @@
                 </div>
             </div>
             
-            <div class="project" id="project7">
-                <h2 id="N7">07</h2>
-                <div class="project-details">
-                    <h2>CORYLUX</h2>
+            <div class="project museum">
+                <div class="project-header">
+                    <h2>08.</h2>
+                    <div class="museum-title">
+                        <h2>SAINT-GINGOLF</h2>
+                        <h2>MUSEUM</h2>
+                    </div>
                 </div>
-                <div class="project-images">
-                    <img src="assets/images/corylux/coryluxarriere.jpg" alt="Back view of Corylux">
-                    <img src="assets/images/corylux/coryluxavant.jpg" alt="Front view of Corylux">
+                <img src="assets/images/musee-st-gingolf/chateau3.jpg" alt="exhibiton setups of museum Saint-Gingolf">
+                <div class="project-description">
+                    <p>Individual practical work the goal was to create exhibiton setups for the St-Gingolf Museum.</p>
+                    <p class="tech">Modeling : Rhinoceros</p>
+                    <p class="render">Rendering : Keyshot, Photoshop</p>
+                </div>
+             </div>
+
+            <div class="project children-room">
+                <div class="project-header">
+                    <h2>09.</h2>
+                    <h2 class="project-title">CHILDREN'S ROOM</h2>
+                </div>
+                <div class="image-container">
+                    <img src="assets/images/childrensroom.jpeg" alt="Room for a child view">
+                    <img src="assets/images/childrensroom2.jpeg" alt="Room for a child different point of view">
                 </div>
                 <div class="project-description">
-                    <p>The Corylux building was a project completed during my
-                        Archicad level 2 training at Asimco.</p>
-                    <p id="tech7">Modeling : Archicad</p>
-                    <p id="render7">Rendering : Twinmotion</p>
+                    <p>Custom-made children's bed.</p>
+                    <p class="tech">Modeling : Sketchup</p>
+                    <p class="render">Rendering : Twinmotion</p>
                 </div>
             </div>
-            <div class="project" id="project8">
-                <div class="titre8">
-                <h2>SAINT-GINGOLF</h2>
-                <h2>MUSEUM</h2>
+
+            <div class="project coffee-table">
+                <div class="project-header">
+                    <h2>10.</h2>
+                    <h2 class="project-title">COFFEE TABLE</h2>
                 </div>
-                <h2 id="N8">08</h2>
-                <img src="assets/images/musee-st-gingolf/chateau3.jpg" alt="exhibiton setups of museum Saint-Gingolf">
-                <div class="project-details">
-                    <p id="def">Individual practical work the goal was to create exhibiton setups for the
-                        St-Gingolf Museum.</p>
-                    <p>Modeling : Rhinoceros</p>
-                    <p>Rendering : Keyshot, Photoshop</p>
-                </div>
-            </div>
-            <div class="project" id="project9">
-                <img src="assets/images/lunettes/lunettesss.jpg" alt="3D glasses stacked vertically in a column" class="img-large">
-                <img src="assets/images/lunettes/lunettes.jpg" alt="3D glasses" class="img-small">
-                <h2 class="title-sunglasses">SUNGLASSES</h2>
-                <div class="project-details">
-                    <p class="description">Personal project, creation of sunglasses.</p>
-                    <p>Modeling : Rhinoceros</p>
-                    <p>Rendering : Twinmotion</p>
-                </div>
-                <h2 class="N09">09</h2>
-            </div>
-            <div class="project" id="project10">
-                <h2 id="N10">10</h2>
                 <img src="assets/images/tablebasse/tablebasse.jpg" alt="Wooden coffee table">
-                <div class="project-details">
+                <div class="project-description">
                     <p>Personal project, creation of a wooden coffee table.</p>
-                    <p>Modeling : Rhinoceros</p>
-                    <p>Rendering : Twinmotion</p>
+                    <p class="tech">Modeling : Rhinoceros</p>
+                    <p class="render">Rendering : Twinmotion</p>
                 </div>
-                <h3 class="project-title">COFFEE TABLE</h3>
-            </div>
+             </div>
         </section>
     </main>
     <footer>
-        <div class="footer-content">
+        <!-- <div class="footer-content">
             <div class="copyright">
                 <p>&copy; 2024 Camila Flores Justiniano. Tous droits réservés.</p>
             </div>
@@ -183,7 +253,7 @@
                 <p>Localisation: Genève</p>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
     <script src="assets/stylesheet/js/transition.js"></script>
     <script type="module">
@@ -195,6 +265,7 @@
         });
         lightbox.init();
     </script>
-      
+    <script src="assets/stylesheet/js/carousel.js"></script>  
 </body>
 </html>
+

@@ -1,7 +1,8 @@
 /* Importation de la police personnalisée */
 @font-face {
-    font-family: 'DelicateCaligraphyDemo';
-    src: url('assets/fonts/DelicateCaligraphyDemo.ttf') format('truetype');
+    font-family: 'Belgiano Serif';
+    src: url('assets/fonts/Belgiano Serif.otf'),
+         url('assets/fonts/Belgiano Serif.ttf');
     font-weight: normal;
     font-style: normal;
 }
@@ -9,8 +10,8 @@
 /* Style général */
 body {
     margin: 0;
-    font-family: 'DelicateCaligraphyDemo', cursive;
-    background-color: #FFFDFA;
+    font-family: 'Belgiano Serif';
+    background-color: rgb(255, 249, 239);
 }
 
 
