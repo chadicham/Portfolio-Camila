@@ -10,15 +10,15 @@
 
 /* Police existante */
 @font-face {
-    font-family: 'Helvetica';
-    src: url('assets/fonts/Helvetica.ttf') format('truetype');
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    src: url('assets/fonts/HelveticaNeue.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 
 body {
-    font-family: 'Helvetica', Arial, sans-serif;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     opacity: 1;
     animation: fadeIn 1s ease-in forwards;
     background-color: rgb(255, 249, 239);
@@ -113,7 +113,8 @@ body {
     display: flex;
     flex-direction: column;
     padding: 0 20px;
-    font-family: 'Helvetica',Arial, sans-serif;
+    font-family: 'Helvetica Neue',Arial, sans-serif;
+    font-weight: 100;
 }
 
 .contact-links a {
@@ -361,7 +362,6 @@ h3.latest-projects {
 
 .project {
     margin: 15% 0;
-    /*border-bottom: 2px solid #ddd;*/
     padding-bottom: 30px;
 
 }
@@ -384,7 +384,7 @@ h2 {
 /* Style projet Wavy table */
 .wavy-table {
     width: 100%;
-    margin: 25% 0;
+    margin: 100px 0;
 }
 
 .wavy-table .project-header {
@@ -424,7 +424,7 @@ h2 {
 /*Projet Cave à vin*/
 .wine-cellar {
     width: 100%;
-    margin: 25% 0;
+    margin: 100px 0;
 }
 
 .wine-cellar .project-header {
@@ -464,7 +464,7 @@ h2 {
 /*projet Night Table */
 .night-table {
     width: 100%;
-    margin: 25% 0;
+    margin: 100px 0;
     display: flex;
     flex-direction: column;
     align-items: flex-end; /* Aligne tous les éléments à droite */
@@ -485,7 +485,7 @@ h2 {
     font-size: 2rem;
     font-weight: 100;
     font-style: italic;
-    margin: 20px;
+    margin: 10px 0;
 }
 
 .night-table img {
@@ -518,14 +518,13 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
 }
 
 .project-header h2 {
     font-size: 2rem;
     font-weight: 100;
     font-style: italic;
-    margin: 20px;
+    margin: 10px 0;
 }
 
 /* Image principale */
@@ -649,10 +648,10 @@ h2 {
     pointer-events: none;
 }
 
-/* Projet 4 */
+/* Projet 3 SEATS */
 .three-seats {
     width: 100%;
-    margin: 25% 0;
+    margin: 100px 0;
     position: relative;
  }
  
@@ -673,7 +672,7 @@ h2 {
     font-size: 2rem;
     font-weight: 100;
     font-style: italic;
-    margin: 20px;
+    margin: 10px 0;
  }
  
  .three-seats img {
@@ -754,57 +753,118 @@ h2 {
         margin: 0;
 }
 
-/*Project 6*/
-
-#project6 .project-details h2{
-    font-size: 2em;
+/* Round Table */
+.round-table {
+    width: 100%;
+    margin: 100px 0;
+    position: relative;
 }
 
-#project6 .project-details p{
+.round-table .project-header {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px 0;
+    margin-right: 0; /* Aligne le header à gauche */
+}
+
+.round-table .project-header h2:first-child {
     margin: 0;
 }
 
-#project6 video{
+.round-table .project-title {
+    font-size: 2rem;
+    font-weight: 100;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.round-table video {
     width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.round-table .project-description {
+    width: 80%;
+    text-align: left;
+}
+
+.round-table .project-description p {
+    margin: 5px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .round-table .project-header,
+    .round-table video,
+    .round-table .project-description {
+        width: 100%;
+    }
+    
+    .round-table .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .round-table .project-title {
+        margin-left: 0;
+    }
 }
 
 /* Living Room */
 .living-room {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    width: 100%;
+    margin: 100px 0;
+    position: relative;
 }
 
-.living-room h2:first-child {
-    align-self: flex-start;
+.living-room .project-header {
+    width: 100%; /* Header à 100% */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.living-room .project-header h2:first-child {
     margin: 0;
+}
+
+.living-room .project-title {
+    font-size: 2rem;
+    font-weight: 100;
+    font-style: italic;
+    margin: 10 0px;
 }
 
 .living-room img {
     width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
 }
 
-.living-room .project-details {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+.living-room .project-description {
     width: 100%;
+    text-align: left;
 }
 
-.living-room .project-details h2 {
-    font-size: 2rem;
-    font-weight: 100;
-    margin: 0;
+.living-room .project-description p {
+    margin: 5px 0;
 }
 
-.living-room .text-project6 {
-    text-align: right;
+@media screen and (max-width: 768px) {
+    .living-room .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .living-room .project-title {
+        margin-left: 0;
+    }
 }
-
-.living-room .text-project6 p {
-    margin: 5px 0 0;
-}
-
 /* Styles spécifiques pour le projet 7 avec deux images */
 .children-room {
     width: 100%;
@@ -874,7 +934,7 @@ h2 {
 /* Grid pour la section #project8 */
 .museum {
     width: 100%;
-    margin: 25% 0;
+    margin: 100px 0;
     position: relative;
 }
 
@@ -883,7 +943,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px 0;
     margin-left: auto; /* Aligne le header à droite */
 }
 
@@ -941,51 +1001,9 @@ h2 {
 
 
 
-/*projet 9
-/* Mise en page spécifique pour le projet 9 avec deux images */
-#project9 {
-    display: grid;
-    grid-template-columns: 50% auto; /* La première colonne prend 25%, la deuxième prend le reste */
-    grid-template-rows: auto auto auto; /* Trois rangées : titres, images, description */
-    row-gap: 0px; /* Espace entre les éléments */
-    column-gap: 20px; /* Espace entre les éléments */
-    padding: 20px;
-    position: relative;
-}
-
-/* Titre 'SUNGLASSES' en haut à gauche */
-#project9 .title-sunglasses {
-    grid-column: 1 / 2;
-    grid-row: 1;
-    font-size: 5rem;
-    font-family: 'Helvetica', Arial, sans-serif;
-    font-weight: lighter;
-    margin: 0;
-    color: #000; /* Couleur de texte */
-}
-
-/* Le numéro '09' en dessous du titre avec un espacement */
-#project9 .N09 {
-    grid-column: 1 / 2;
-    grid-row: 2;
-    margin-top: 10px;
-    font-size: 1.5rem;
-    font-family: 'Helvetica', Arial, sans-serif;
-    color: #000; /* Couleur de texte */
-}
-
-/* Image large (lunettesss.jpg) prenant 25% de la largeur */
-#project9 .img-large {
-    grid-column: 1;
-    grid-row: 3;
-    width: 100%; /* Pour occuper toute la colonne (25%) */
-    max-width: 100%;
-    height: auto;
-}
-
 .coffee-table {
     width: 100%;
-    margin: 25% 0;
+    margin: 25% 0 10% 0;
     position: relative;
 }
 
@@ -994,7 +1012,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .coffee-table .project-header h2:first-child {
@@ -1005,7 +1023,7 @@ h2 {
     font-size: 2rem;
     font-weight: 100;
     font-style: italic;
-    margin: 20px;
+    margin: 10 0px;
 }
 
 .coffee-table img {
@@ -1041,7 +1059,7 @@ h2 {
     }
 }
 
-/* Styles pour le footer */
+/* Styles pour le footer
 footer {
     padding: 20px 0;
     margin-top: 40px;
@@ -1077,7 +1095,7 @@ footer {
     color: rgb(0, 0, 0);
     text-decoration: none;
     transition: color 0.3s ease;
-}
+} */
 
 /* Styles de base (pour tous les écrans) */
 
