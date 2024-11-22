@@ -1,0 +1,49 @@
+/* Importation de la police personnalisée */
+@font-face {
+    font-family: 'Belgiano Serif';
+    src: url('assets/fonts/Belgiano Serif.otf'),
+         url('assets/fonts/Belgiano Serif.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Style général */
+body {
+    margin: 0;
+    font-family: 'Belgiano Serif';
+    background-color: rgb(255, 249, 239);
+}
+
+
+/* Ajout d'un style général pour toutes les images */
+img {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Effet de zoom au survol pour toutes les images */
+img:hover {
+    transform: scale(1.02);
+}
+
+/* Mise à jour des styles spécifiques des projets pour inclure la transition */
+#project3 .project-image {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+#project3 .project-link:hover .project-image {
+    transform: scale(1.05);
+}
+
+#project7 .project-images img {
+    width: auto;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+#project7 .project-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Le reste du CSS reste inchangé... */

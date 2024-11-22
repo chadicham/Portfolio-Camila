@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Portfolio</title>
     <meta name="description" content="Portfolio de Camila Flores Justiniano, Designer 3D basée à Genève, spécialisée en design d'intérieur et de mobilier. Découvrez mes derniers projets innovants et fonctionnels.">
-    <link rel="stylesheet" href="assets/stylesheet/css/style.css">
-    <link rel="stylesheet" href="assets/stylesheet/css/home.css">
-    <link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="js/photoswipe/photoswipe.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
@@ -15,7 +15,7 @@
     <div class="intro-section">
         <div class="video-container">
             <video autoplay muted loop playsinline class="intro-video">
-                <source src="assets/images/tablerondejardin/video.mp4" type="video/mp4">
+                <source src="assets/images/tablerondejardin/video.webm" type="video/webm">
                 Votre navigateur ne supporte pas la vidéo.
             </video>
         </div>
@@ -188,7 +188,7 @@
                     <h2 class="project-title">ROUND TABLE</h2>
                 </div>
                 <video autoplay muted loop>
-                    <source src="assets/images/tablerondejardin/video.mp4" type="video/mp4">
+                    <source src="assets/images/tablerondejardin/video.webm" type="video/webm">
                     Votre navigateur ne supporte pas la vidéo.
                 </video>
                 <div class="project-description">
@@ -202,8 +202,8 @@
                 <div class="project-header">
                     <h2>08.</h2>
                     <div class="museum-title">
-                        <h2>SAINT-GINGOLF</h2>
-                        <h2>MUSEUM</h2>
+                        <h2 class="title-saint-gingolf">SAINT-GINGOLF MUSEUM</h2>
+                        
                     </div>
                 </div>
                 <img src="assets/images/musee-st-gingolf/chateau3.jpg" alt="exhibiton setups of museum Saint-Gingolf">
@@ -258,17 +258,17 @@
         </div>
     </footer> -->
 
-    <script src="assets/stylesheet/js/transition.js"></script>
+    <script src="js/transition.js"></script>
     <script type="module">
         import PhotoSwipeLightbox from 'photoswipe/dist/photoswipe-lightbox.esm.js';
         const lightbox = new PhotoSwipeLightbox({
           gallery: '#my-gallery',
           children: 'a',
-          pswpModule: () => import('photoswipe/dist/photoswipe.esm.js')
+          pswpModule: () => import('photoswipe/photoswipe.esm.js')
         });
         lightbox.init();
     </script>
-    <script src="assets/stylesheet/js/carousel.js"></script>  
+    <script src="js/carousel.js"></script>  
 </body>
 </html>
 
