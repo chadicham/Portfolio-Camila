@@ -103,7 +103,7 @@ body {
 .name p {
     margin: 0;
     font-size: 3.5em;
-    line-height: 1.1;
+    line-height: 0.8;
     color: black;
 }
 
@@ -132,7 +132,6 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 20px;
     padding: 10px 0;
 }
 
@@ -143,8 +142,7 @@ body {
 
 .intro-text, .projects-intro {
     margin: 0;
-    font-size: 1.1em;
-    line-height: 1.9;
+    font-size: 1.25rem;
     color: black;
 }
 
@@ -374,7 +372,7 @@ h2 {
 }
 
 .project .project-details h2{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 100;
     font-style: italic;
 }
@@ -415,6 +413,7 @@ h2 {
 
 .wavy-table .project-description {
     text-align: left;
+
 }
 
 .wavy-table .project-description p {
@@ -999,7 +998,7 @@ h2 {
 
 .coffee-table {
     width: 100%;
-    margin: 25% 0 5px 0;
+    margin: 100px 0 5px 0;
     position: relative;
 }
 
@@ -1008,7 +1007,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+
 }
 
 .coffee-table .project-header h2:first-child {
@@ -1016,7 +1015,7 @@ h2 {
 }
 
 .coffee-table .project-title {
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-weight: 300;
     font-style: italic;
     margin: 10 0px;
