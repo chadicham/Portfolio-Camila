@@ -1,13 +1,37 @@
+:root {
+    --bg-primary: rgb(255, 249, 239);
+    --text-primary: #000000;
+    --text-white: #ffffff;
+    --font-primary: 'Belgiano Serif', 'Helvetica Neue', Arial, sans-serif;
+    --font-secondary: 'Helvetica Neue', Arial, sans-serif;
+    --spacing-base: 20px;
+    --spacing-small: 15px;
+    --spacing-tiny: 10px;
+    --transition-smooth: 0.3s ease;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
+    --border-subtle: 1px solid rgba(0, 0, 0, 0.1);
+    --border-button: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-primary);
+    margin: 0;
+}
+
 .header {
-    background-color: #FFFDFA;
-    padding: 20px;
+    background-color: var(--bg-primary);
+    padding: var(--spacing-base);
     text-align: center;
 }
 
 .header h1 {
-    font-family: 'Delicate Caligraphy Demo', cursive;
-    font-size: 3em;
-    margin: 20px 0;
+    font-family: var(--font-primary);
+    font-size: clamp(1.8em, 5vw, 3em);
+    margin: var(--spacing-base) 0;
+    font-weight: 300;
+    font-style: italic;
 }
 
 .back-to-home {
@@ -18,45 +42,99 @@
 
 .back-button {
     display: inline-block;
-    color: #000000;
-    font-size: 1.2em;
+    color: var(--text-primary);
+    font-size: 1em;
     text-decoration: none;
-    border: 1px solid #000000;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border: var(--border-button);
+    padding: var(--spacing-tiny) var(--spacing-base);
+    transition: background-color var(--transition-smooth), color var(--transition-smooth);
+    font-family: var(--font-primary);
+    letter-spacing: 0.1em;
 }
 
 .back-button:hover {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: var(--text-primary);
+    color: var(--text-white);
 }
 
 /* Styles généraux pour la galerie */
 .villa-gallery {
+    container-type: inline-size;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-    grid-gap: 20px; /* Espace entre les images */
-    padding: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-base);
+    padding: var(--spacing-base);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Images de la galerie */
 .gallery-image {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Pour ajuster l'image à son conteneur */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    object-fit: cover;
+    box-shadow: var(--shadow-light);
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+    will-change: transform;
+}
+
+.gallery-image:hover {
+    transform: scale(1.02) translateZ(0);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Classes utilitaires pour variations asymétriques */
+.gallery-item--large {
+    grid-column: span 2;
+}
+
+.gallery-item--offset {
+    transform: translateY(20px);
+}
+
+.gallery-item--tall {
+    grid-row: span 2;
 }
 
 /* Styles pour le footer */
 footer {
-    background-color: #FFFDFA;
-    padding: 10px;
+    background-color: var(--bg-primary);
+    padding: var(--spacing-small);
     text-align: center;
-    border-top: 2px solid #333;
+    border-top: var(--border-subtle);
+    font-family: var(--font-secondary);
+    font-size: 0.9em;
+    margin-top: 30px;
+    color: var(--text-primary);
 }
 
+/* Responsive design */
 @media (max-width: 768px) {
     .villa-gallery {
         grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 2.2em;
+    }
+    
+    .back-to-home {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.8em;
+    }
+    
+    .villa-gallery {
+        grid-gap: 15px;
+        padding: 10px;
     }
 }

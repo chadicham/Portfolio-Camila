@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Villa Pully - Portfolio</title>
-    <link rel="stylesheet" href="assets/stylesheet/css/style.css">
-    <link rel="stylesheet" href="assets/stylesheet/css/villa.css">
-    <link rel="stylesheet" href="./assets/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/villa.css">
+    <link rel="stylesheet" href="js/photoswipe/photoswipe.css">
 </head>
 
 <body>
@@ -18,23 +18,23 @@
     </header>
     <main>
         <section class="villa-gallery" id="villa-gallery">
-            <a href="assets/images/villapully/path/villalarge.jpg" data-pswp-width="1600" data-pswp-height="900" target="_blank">
-                <img src="assets/images/villapully/path/villalarge.jpg" alt="Villa Pully - Large View" class="gallery-image">
+            <a href="assets/images/villapully/path/villalarge.jpg" data-pswp-width="1600" data-pswp-height="900" target="_blank" class="gallery-item gallery-item--large">
+                <img src="assets/images/villapully/path/villalarge.jpg" alt="Villa Pully - Large View" class="gallery-image" loading="lazy" decoding="async">
             </a>
-            <a href="assets/images/villapully/path/terrasse.jpg" data-pswp-width="1600" data-pswp-height="900">
-                <img src="assets/images/villapully/path/terrasse.jpg" alt="Villa Pully - Terrace" class="gallery-image">
+            <a href="assets/images/villapully/path/terrasse.jpg" data-pswp-width="1600" data-pswp-height="900" class="gallery-item">
+                <img src="assets/images/villapully/path/terrasse.jpg" alt="Villa Pully - Terrace" class="gallery-image" loading="lazy" decoding="async">
             </a>
-            <a href="assets/images/villapully/path/salleamanger.jpg" data-pswp-width="1600" data-pswp-height="900">
-                <img src="assets/images/villapully/path/salleamanger.jpg" alt="Villa Pully - Dining room" class="gallery-image">
+            <a href="assets/images/villapully/path/salleamanger.jpg" data-pswp-width="1600" data-pswp-height="900" class="gallery-item gallery-item--offset">
+                <img src="assets/images/villapully/path/salleamanger.jpg" alt="Villa Pully - Dining room" class="gallery-image" loading="lazy" decoding="async">
             </a>
-            <a href="assets/images/villapully/path/salon.jpg" data-pswp-width="1600" data-pswp-height="900">
-                <img src="assets/images/villapully/path/salon.jpg" alt="Villa Pully - Living room" class="gallery-image">
+            <a href="assets/images/villapully/path/salon.jpg" data-pswp-width="1600" data-pswp-height="900" class="gallery-item">
+                <img src="assets/images/villapully/path/salon.jpg" alt="Villa Pully - Living room" class="gallery-image" loading="lazy" decoding="async">
             </a>
-            <a href="assets/images/villapully/path/hall.jpg" data-pswp-width="1600" data-pswp-height="900">
-                <img src="assets/images/villapully/path/hall.jpg" alt="Villa Pully - The entrance hall" class="gallery-image">
+            <a href="assets/images/villapully/path/hall.jpg" data-pswp-width="1600" data-pswp-height="900" class="gallery-item">
+                <img src="assets/images/villapully/path/hall.jpg" alt="Villa Pully - The entrance hall" class="gallery-image" loading="lazy" decoding="async">
             </a>
-            <a href="assets/images/villapully/path/exterieur.jpg" data-pswp-width="1600" data-pswp-height="900">
-                <img src="assets/images/villapully/path/exterieur.jpg" alt="Villa Pully - view from swimingpool" class="gallery-image">
+            <a href="assets/images/villapully/path/exterieur.jpg" data-pswp-width="1600" data-pswp-height="900" class="gallery-item">
+                <img src="assets/images/villapully/path/exterieur.jpg" alt="Villa Pully - view from swimingpool" class="gallery-image" loading="lazy" decoding="async">
             </a>
         </section>
     </main>
@@ -42,15 +42,15 @@
     <footer>
         <p>&copy; 2024 Camila Flores Justiniano. Tous droits réservés.</p>
     </footer>
-    <script type="module" src="./assets/photoswipe/photoswipe-lightbox.esm.min.js"></script>
-    <script type="module" src="./assets/photoswipe/photoswipe.esm.min.js"></script>
+    <script type="module" src="./js/photoswipe/photoswipe-lightbox.esm.min.js"></script>
+    <script type="module" src="./js/photoswipe/photoswipe.esm.min.js"></script>
     <script type="module">
-        import PhotoSwipeLightbox from './assets/photoswipe/photoswipe-lightbox.esm.min.js';
+        import PhotoSwipeLightbox from './js/photoswipe/photoswipe-lightbox.esm.min.js';
         
         const lightbox = new PhotoSwipeLightbox({
           gallery: '.villa-gallery',       // Sélecteur de la galerie
           children: 'a',                   // Sélecteur des éléments enfants (liens)
-          pswpModule: () => import('./assets/photoswipe/photoswipe.esm.min.js') // Module PhotoSwipe
+          pswpModule: () => import('./js/photoswipe/photoswipe.esm.min.js') // Module PhotoSwipe
         });
         
         lightbox.init();

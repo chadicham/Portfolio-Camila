@@ -1,36 +1,20 @@
-/* Importation de la police personnalisée */
-
-@font-face {
-    font-family: 'Belgiano Serif';
-    src: url('../fonts/Belgiano-Serif.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Police existante */
-@font-face {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    src: url('../fonts/HelveticaNeue.ttc') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
+/* Styles spécifiques pour la page d'accueil */
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--font-primary);
     opacity: 1;
     animation: fadeIn 1s ease-in forwards;
-    background-color: rgb(255, 249, 239);
+    background-color: var(--bg-primary);
 }
 
 .fade-out {
     opacity: 0;
-    transition: opacity 0.5s ease;
+    transition: opacity var(--transition-smooth);
 }
 
 .fade-in {
     opacity: 1;
-    transition: opacity 0.5s ease;
+    transition: opacity var(--transition-smooth);
 }
 
 .hidden {
@@ -67,18 +51,18 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(255, 249, 239);
+    background-color: var(--bg-primary);
     z-index: 1000;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    font-family: 'Belgiano Serif', Helvetica, sans-serif;
-    padding: 0 0 10px 0;
-    color: black;
+    font-family: var(--font-primary);
+    padding: 0 0 var(--spacing-tiny) 0;
+    color: var(--text-primary);
 }
 
 .navbar-content {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 calc(var(--spacing-base) * 2);
     display: flex;
 }
 
@@ -87,11 +71,12 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 200px;
+    flex: 0 0 auto
 }
 
 /* Style de l'encadré du nom */
 .name-box {
-    padding: 10px;
+    padding: var(--spacing-tiny);
     border: none;
 }
 
@@ -102,24 +87,24 @@ body {
 
 .name p {
     margin: 0;
-    font-size: 3.5em;
+    font-size: clamp(2.5em, 5vw, 3.5em);
     line-height: 0.8;
-    color: black;
+    color: var(--text-primary);
 }
 
 /* Liens de contact */
 .contact-links {
     display: flex;
     flex-direction: column;
-    padding: 0 20px;
-    font-family: 'Helvetica Neue',Arial, sans-serif;
+    padding: 0 var(--spacing-base);
+    font-family: var(--font-secondary);
     font-weight: 100;
 }
 
 .contact-links a {
-    color: black;
+    color: var(--text-primary);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: opacity var(--transition-smooth);
     font-size: 0.8em;
 }
 
@@ -132,18 +117,18 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 10px 0;
+    padding: var(--spacing-tiny) 0;
 }
 
 .presentation .intro-text{
-    color: #000;
+    color: var(--text-primary);
     text-align: start;
 }
 
 .intro-text, .projects-intro {
     margin: 0;
-    font-size: 1.25rem;
-    color: black;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-primary);
 }
 
 /* Ajustement du header */
@@ -187,47 +172,39 @@ body {
 }
 
 .intro-text h1 {
-    font-family: 'Belgiano Serif', Helvetica, sans-serif;
-    font-size: 2.4em;
+    font-family: var(--font-primary);
+    font-size: clamp(2em, 4vw, 2.4em);
     font-weight: 100;
-    margin: 0;
+    margin: 0 0 var(--spacing-base) 0;
     letter-spacing: 0.3em;
-    position: fixed;
-    transform: translateX(-50%); /* Ajuste pour centrer précisément */
-    text-align: center; /* Optionnel : centre le texte à l'intérieur */
+    text-align: center;
 }
 
 .intro-text p {
-    font-family: 'Belgiano Serif', Helvetica, sans-serif;
-    font-size: 1.5em;
-    margin: 10px 0 20px;
-    position: fixed;
-    top: 5vh;
-    left: 50%; /* Positionne au milieu horizontalement */
-    transform: translateX(-50%); /* Ajuste pour centrer précisément */
-    text-align: center; /* Optionnel : centre le texte à l'intérieur */
+    font-family: var(--font-primary);
+    font-size: 1em;
+    margin: 0 0 var(--spacing-base) 0;
+    text-align: center;
 }
 
 
 .enter-site {
-    position: absolute;
-    bottom: -25vh;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #FFF;
+    margin-top: calc(var(--spacing-base) * 2);
+    color: var(--text-white);
     font-size: 1em;
     letter-spacing: 0.3em;
     text-decoration: none;
-    border: none;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-family: 'Belgiano Serif', Helvetica, sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: var(--spacing-tiny) var(--spacing-base);
+    transition: background-color var(--transition-smooth), color var(--transition-smooth);
+    font-family: var(--font-primary);
     background: none;
+    cursor: pointer;
 }
 
 .enter-site:hover {
-    background-color: #FFF;
-    color: #000;
+    background-color: var(--text-white);
+    color: var(--text-primary);
 }
 
 /* Nouvelle classe pour l'animation de transition */
@@ -237,7 +214,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 249, 239);
+    background-color: var(--bg-primary);
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
@@ -254,36 +231,9 @@ body {
     transition: opacity 1s ease;
 }
 
-
-
-
-
-/* Styles pour le bouton de retour à l'introduction */
-.back-to-intro {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.back-button {
-    display: inline-block;
-    color: #000000;
-    font-size: 1.2em;
-    text-decoration: none;
-    border: 1px solid #000000;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.back-button:hover {
-    background-color: #000000;
-    color: #ffffff;
-}
-
 /* Styles pour le header */
 .header {
-    padding: 100px 20px;
+    padding: calc(var(--spacing-base) * 5) var(--spacing-base);
     display: flex;
     align-items: flex-start;
 }
@@ -297,82 +247,43 @@ body {
     flex: 1;
 }
 
-/* Cellule de texte du header à gauche
-.header-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Titre principal du header */
-/* .header-title { 
-    font-size: 1em;
-    margin: 0;
-    color: #333;
-    font-family: 'Belgiano Serif', Helvetica, sans-serif;
-} */
-
-/* Sous-titre principal du header */
-/* .header-main-title {
-    font-size: 7em;
-    margin: 100px 100px 100px 0px;
-    color: #000;
-    font-weight: normal;
-    font-family: 'Belgiano Serif', Helvetica, sans-serif;
-} */
 
 h3.latest-projects {
     font-style: italic;
     font-weight: 100;
 }
 
-/* Paragraphe d'introduction */
-/* .header-intro {
-    flex: 1;
-    font-size: 1.5em;
-    color: rgb(0, 0, 0);
-    line-height: 1.6;
-    font-family: 'Helvetica', Arial, sans-serif;
-    text-align: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-} */
-
-/* Sous-titre des derniers projets */
-/* .latest-projects {
-    font-size: 2em;
-    margin-top: 20px;
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    font-family: 'Helvetica', Arial, sans-serif;
-} */
 
 /* Styles pour les projets */
 .projects {
     width: 80%;
     margin: 0 auto;
-    padding: 20px;
+    padding: var(--spacing-base);
+    container-type: inline-size;
 }
 
 .project {
     margin: 15% 0;
-    padding-bottom: 30px;
-
+    padding-bottom: calc(var(--spacing-base) * 1.5);
 }
+
 .project img {
     max-width: 100%;
+    transition: transform var(--transition-smooth);
+    will-change: transform;
+}
+
+.project img:hover {
+    transform: scale(1.02) translateZ(0);
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: lighter;
 }
 
 .project .project-details h2{
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
     font-weight: 100;
     font-style: italic;
 }
@@ -511,7 +422,7 @@ h2 {
 }
 
 
-/*Projet 3*//* Styles pour le projet Villa Pully */
+/* projet Villa Pully */
 .project.villa-pully {
     width: 100%;
     max-width: 1200px;
@@ -619,42 +530,6 @@ h2 {
     color: rgb(255, 249, 239);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .carousels-container {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .villa-swiper-left,
-    .villa-swiper-right {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .swiper {
-        height: 200px;
-    }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .project-header,
-    .main-image,
-    .villa-swiper,
-    .project-description {
-        width: 100%;
-    }
-
-    .project-header h2 {
-        font-size: 1.5rem;
-    }
-
-    .swiper-slide {
-        width: 100%; /* Sur mobile, une image prend toute la largeur */
-    }
-}
-
 /* Style pour masquer les slides non-actifs */
 .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next) {
     opacity: 0;
@@ -709,23 +584,6 @@ h2 {
     margin: 5px 0;
  }
  
- @media screen and (max-width: 768px) {
-    .three-seats .project-header,
-    .three-seats img,
-    .three-seats .project-description {
-        width: 100%;
-        margin-left: 0;
-    }
-    
-    .three-seats .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .three-seats .project-title {
-        margin-left: 0;
-    }
- }
 
 /* Round Table */
 .round-table {
@@ -773,23 +631,6 @@ h2 {
     margin: 5px 0;
 }
 
-@media screen and (max-width: 768px) {
-    .round-table .project-header,
-    .round-table video,
-    .round-table .project-description {
-        width: 100%;
-    }
-    
-    .round-table .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .round-table .project-title {
-        margin-left: 0;
-    }
-}
-
 /* Living Room */
 .living-room {
     width: 100%;
@@ -835,16 +676,6 @@ h2 {
     margin: 5px 0;
 }
 
-@media screen and (max-width: 768px) {
-    .living-room .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .living-room .project-title {
-        margin-left: 0;
-    }
-}
 /* Styles spécifiques pour le projet 7 avec deux images */
 .children-room {
     width: 100%;
@@ -885,6 +716,17 @@ h2 {
     object-fit: cover;
 }
 
+@media screen and (max-width: 768px) {
+    .children-room .image-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .children-room .image-container img {
+        width: 100%;
+    }
+}
+
 .children-room .project-description {
     text-align: left;
 }
@@ -893,32 +735,7 @@ h2 {
     margin: 5px 0;
 }
 
-/* @media screen and (max-width: 768px) {
-    .childrensroom {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-
-    .childrensroom .project-details {
-        grid-column: 1;
-        justify-self: start;
-    }
-
-    .childrensroom .project-images {
-        flex-direction: column;
-    }
-
-    .childrensroom .project-images img {
-        width: 100%;
-    }
-
-    .childrensroom .project-description {
-        grid-column: 1;
-        text-align: left;
-    }
-} */
-/*projet 8 */
-/* Grid pour la section #project8 */
+/*Saint-Gingolf*/
 .museum {
     width: 100%;
     margin: 100px 0;
@@ -976,26 +793,7 @@ h2 {
     margin: 5px 0;
 }
 
-@media screen and (max-width: 768px) {
-    .museum .project-header,
-    .museum img,
-    .museum .project-description {
-        width: 100%;
-        margin-left: 0;
-    }
-    
-    .museum .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .museum .museum-title {
-        text-align: left;
-    }
-}
-
-
-
+/* Coffee table */
 .coffee-table {
     width: 100%;
     margin: 100px 0 5px 0;
@@ -1037,95 +835,8 @@ h2 {
     margin: 5px 0;
 }
 
-@media screen and (max-width: 768px) {
-    .coffee-table .project-header,
-    .coffee-table img,
-    .coffee-table .project-description {
-        width: 100%;
-    }
-    
-    .coffee-table .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .coffee-table .project-title {
-        margin-left: 0;
-    }
-}
-
-/* Styles pour le footer
-footer {
-    padding: 20px 0;
-    margin-top: 40px;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.copyright, .contact-info {
-    flex: 1;
-    min-width: 300px;
-    padding: 0 20px;
-}
-
-.contact-info h3 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    font-family: 'Helvetica', Arial, sans-serif;
-}
-
-.contact-info p {
-    margin: 5px 0;
-    font-size: 0.9em;
-}
-
-.contact-info a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    transition: color 0.3s ease;
-} */
 
 /* Styles de base (pour tous les écrans) */
-
-/* Ajustements pour les tablettes */
-@media screen and (max-width: 1024px) {
-    .header-content {
-        flex-direction: column;
-    }
-
-    .header-main-title {
-        font-size: 5em;
-    }
-
-    .header-intro {
-        font-size: 1.2em;
-    }
-
-    .projects {
-        width: 90%;
-    }
-
-    .navbar-content {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .left-column {
-        width: 100%;
-    }
-
-    .name p {
-        font-size: 35px;
-    }
-}
-
 
 
 /* Ajustements pour les petits mobiles */
@@ -1202,40 +913,58 @@ footer {
         margin: 15% 0;
     }
 
-    #project1 .project-details h2,
-    #project2 .project-details h2,
-    #project5 #title5 {
-        font-size: 2rem;
+    /*styles pour la navbar */
+    .fixed-navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .left-column {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        min-width: unset;
+    }
+
+    .name-box {
+        padding: 5px;
+    }
+
+    .name p {
+        font-size: 2.5em;
+    }
+
+    .contact-links {
+        padding: 0;
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .contact-links a {
+        font-size: 0.75em;
+    }
+
+    .presentation {
+        padding: 0;
+    }
+
+    .intro-text, .projects-intro {
+        font-size: 1rem;
+        line-height: 1.4;
     }
 
     .enter-site {
         bottom: -15vh;
     }
 
-    #project2, #project4, #project5, #project8 {
-        grid-template-columns: 1fr;
-    }
-
-    #project7 .project-images {
-        grid-template-columns: 1fr;
-    }
-
-    #project9 {
-        grid-template-columns: 1fr;
-    }
-
     .project-details {
         order: -1; /* Place les détails au-dessus de l'image sur mobile */
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .copyright, .contact-info {
-        text-align: center;
-        margin-bottom: 20px;
     }
     
     body {
@@ -1274,9 +1003,40 @@ footer {
         font-size: 1em;
     }
 
+    /* Ajustements pour les tablettes */
+    .fixed-navbar {
+        padding: 10px 0;
+    }
+
+    .left-column {
+        min-width: 180px;
+    }
+
+    .name p {
+        font-size: 2.2em;
+    }
+
+    .contact-links {
+        padding: 0 10px;
+    }
+
+    .contact-links a {
+        font-size: 0.7em;
+    }
+
+    .presentation {
+        margin-left: 15px;
+    }
+
+    .intro-text, .projects-intro {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
     /*Wavy-table*/
-    .wavy-table .project-title {
-        font-size: 3rem;
+    .wavy-table {
+        margin: 250px 0 100px 0;
+
     }
 
     /*cave à vin*/
@@ -1293,23 +1053,204 @@ footer {
     }
 
     /*Night Table*/
-    .night-table .project-title {
-        font-size: 3rem;
-    }
-    
     .night-table img, 
     .night-table .project-header,
     .night-table .project-description {
         width: 100%;
     }
+
+    /*Villa Pully*/
+    .project-header,
+    .main-image,
+    .villa-swiper,
+    .project-description {
+        width: 100%;
+    }
+
+    .project-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .swiper-slide {
+        width: 100%; /* Sur mobile, une image prend toute la largeur */
+    }
+
+    .carousels-container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .villa-swiper-left,
+    .villa-swiper-right {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .swiper {
+        height: 200px;
+    }
+
+    /*3 SEATS*/
+    .three-seats .project-header,
+    .three-seats img,
+    .three-seats .project-description {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .three-seats .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .three-seats .project-title {
+        margin-left: 0;
+    }
+
+    /* Round Table */
+    .round-table .project-header,
+    .round-table video,
+    .round-table .project-description {
+        width: 100%;
+    }
+    
+    .round-table .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .round-table .project-title {
+        margin-left: 0;
+    }
+
+    /* Living room */
+    .living-room .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .living-room .project-title {
+        margin-left: 0;
+    }
+
+    /*Children's Room */
+    .childrensroom {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .childrensroom .project-details {
+        grid-column: 1;
+        justify-self: start;
+    }
+
+    .childrensroom .project-images {
+        flex-direction: column;
+    }
+
+    .childrensroom .project-images img {
+        width: 100%;
+    }
+
+    .childrensroom .project-description {
+        grid-column: 1;
+        text-align: left;
+    }
+
+    /* Saint-Gingolf */
+    .museum .project-header,
+    .museum img,
+    .museum .project-description {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .museum .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .museum .museum-title {
+        text-align: left;
+    }
+
+    /* Coffee table*/
+    .coffee-table .project-header,
+    .coffee-table img,
+    .coffee-table .project-description {
+        width: 100%;
+    }
+    
+    .coffee-table .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .coffee-table .project-title {
+        margin-left: 0;
+    }
     
 }
 
+/* Ajustements pour les tablettes */
 @media screen and (max-width: 1024px) {
     .header {
         padding-top: 300px;
     }
+
+    .header-content {
+        flex-direction: column;
+    }
+
+    .header-main-title {
+        font-size: 5em;
+    }
+
+    .header-intro {
+        font-size: 1.2em;
+    }
+
+    .projects {
+        width: 90%;
+    }
+
+    .navbar-content {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .left-column {
+        width: 100%;
+    }
+
+    .name p {
+        font-size: 35px;
+    }
+
+    /*navbar tablette*/
+
+    .navbar-content {
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .presentation {
+        margin-left: 20px;
+    }
+
+    .name p {
+        font-size: 2.8em;
+    }
+
+    .intro-text, .projects-intro {
+        font-size: 1rem;
+    }
+
+    .contact-links a {
+        font-size: 0.75em;
+    }
 }
+
 
 @media screen and (max-width: 1200px) {
     .name p {

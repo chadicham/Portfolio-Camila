@@ -1,49 +1,64 @@
 /* Importation de la police personnalisée */
 @font-face {
     font-family: 'Belgiano Serif';
-    src: url('assets/fonts/Belgiano Serif.otf'),
-         url('assets/fonts/Belgiano Serif.ttf');
+    src: url('../fonts/Belgiano-Serif.otf') format('opentype'),
+         url('../fonts/Belgiano-Serif.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('../fonts/HelveticaNeue.ttc') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Variables CSS */
+:root {
+    --bg-primary: rgb(255, 249, 239);
+    --text-primary: #000000;
+    --text-white: #ffffff;
+    --font-primary: 'Belgiano Serif', 'Helvetica Neue', Arial, sans-serif;
+    --font-secondary: 'Helvetica Neue', Arial, sans-serif;
+    --spacing-base: 20px;
+    --spacing-small: 15px;
+    --spacing-tiny: 10px;
+    --transition-smooth: 0.3s ease;
+    --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Style général */
 body {
     margin: 0;
-    font-family: 'Belgiano Serif';
-    background-color: rgb(255, 249, 239);
+    font-family: var(--font-primary);
+    background-color: var(--bg-primary);
 }
 
 
 /* Ajout d'un style général pour toutes les images */
 img {
-    transition: all 0.3s ease-in-out;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+    will-change: transform;
 }
 
 /* Effet de zoom au survol pour toutes les images */
 img:hover {
-    transform: scale(1.02);
+    transform: scale(1.02) translateZ(0);
 }
 
-/* Mise à jour des styles spécifiques des projets pour inclure la transition */
-#project3 .project-image {
-    width: 100%;
-    height: auto;
-    transition: all 0.3s ease-in-out;
+/* Classes utilitaires pour asymétrie */
+.project--large {
+    grid-column: span 2;
 }
 
-#project3 .project-link:hover .project-image {
-    transform: scale(1.05);
+.project--offset {
+    transform: translateY(20px);
 }
 
-#project7 .project-images img {
-    width: auto;
-    height: auto;
-    transition: all 0.3s ease-in-out;
-}
-
-#project7 .project-images img:hover {
-    transform: scale(1.05);
+.project--tall {
+    grid-row: span 2;
 }
 
 /* Le reste du CSS reste inchangé... */
