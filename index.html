@@ -4,12 +4,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Portfolio</title>
     <meta name="description" content="Portfolio de Camila Flores Justiniano, Designer 3D basée à Genève, spécialisée en design d'intérieur et de mobilier. Découvrez mes derniers projets innovants et fonctionnels.">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/css/style.css?v=1.0" as="style">
+    <link rel="preload" href="assets/css/home.css?v=1.0" as="style">
+    <link rel="preload" href="assets/images/tablerondejardin/video.webm" as="video" type="video/webm">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/style.css?v=1.0">
     <link rel="stylesheet" href="assets/css/home.css?v=1.0">
     <link rel="stylesheet" href="js/photoswipe/photoswipe.css?v=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?v=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?v=1.0"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 <body class="fade-in">
     <!-- Section intro -->
@@ -259,7 +268,9 @@
         </div>
     </footer> -->
 
-    <script src="js/transition.js"></script>
+    <!-- Scripts - Defer for better performance -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="js/transition.js" defer></script>
     <script type="module">
         import PhotoSwipeLightbox from './js/photoswipe/photoswipe-lightbox.esm.min.js';
         const lightbox = new PhotoSwipeLightbox({
@@ -269,6 +280,6 @@
         });
         lightbox.init();
     </script>
-    <script src="js/carousel.js"></script>  
+    <script src="js/carousel.js" defer></script>  
 </body>
 </html>

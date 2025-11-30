@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Villa Pully - Portfolio</title>
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/css/villa.css" as="style">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/villa.css">
     <link rel="stylesheet" href="js/photoswipe/photoswipe.css">
@@ -43,15 +51,15 @@
     <footer>
         <p>&copy; 2024 Camila Flores Justiniano. Tous droits réservés.</p>
     </footer>
-    <script type="module" src="./js/photoswipe/photoswipe-lightbox.esm.min.js"></script>
-    <script type="module" src="./js/photoswipe/photoswipe.esm.min.js"></script>
+    
+    <!-- Scripts optimized -->
     <script type="module">
         import PhotoSwipeLightbox from './js/photoswipe/photoswipe-lightbox.esm.min.js';
         
         const lightbox = new PhotoSwipeLightbox({
-          gallery: '.villa-gallery',       // Sélecteur de la galerie
-          children: 'a',                   // Sélecteur des éléments enfants (liens)
-          pswpModule: () => import('./js/photoswipe/photoswipe.esm.min.js') // Module PhotoSwipe
+          gallery: '.villa-gallery',
+          children: 'a',
+          pswpModule: () => import('./js/photoswipe/photoswipe.esm.min.js')
         });
         
         lightbox.init();

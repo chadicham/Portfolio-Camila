@@ -1,56 +1,69 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const enterButton = document.getElementById('enter-button');
-    const backButton = document.getElementById('back-to-intro');
-    const introSection = document.querySelector('.intro-section');
-    const mainContent = document.querySelector('.main-content');
-    const navbar = document.querySelector('.fixed-navbar');
-
+(function() {
+    'use strict';
+    
+    // Cache des éléments DOM
+    let elements = {};
+    
+    function cacheElements() {
+        elements = {
+            enterButton: document.getElementById('enter-button'),
+            backButton: document.getElementById('back-to-intro'),
+            introSection: document.querySelector('.intro-section'),
+            mainContent: document.querySelector('.main-content'),
+            navbar: document.querySelector('.fixed-navbar')
+        };
+    }
+    
     function showIntro() {
-        // Cache la navbar pendant l'intro
-        if (navbar) {
-            navbar.style.display = 'none';
-        }
+        const { navbar, introSection, mainContent } = elements;
         
-        // Affiche l'intro
-        introSection.style.display = 'flex'; // Utilise flex au lieu de block pour le centrage
+        if (navbar) navbar.style.display = 'none';
+        
+        introSection.style.display = 'flex';
         introSection.classList.remove('intro-hidden');
         mainContent.style.display = 'none';
-        document.body.style.overflow = 'hidden'; // Empêche le défilement
+        document.body.style.overflow = 'hidden';
     }
-
+    
     function showContent() {
-        // Affiche la navbar
+        const { navbar, introSection, mainContent } = elements;
+        
         if (navbar) {
             navbar.style.display = 'block';
             navbar.style.opacity = '0';
-            setTimeout(() => {
+            requestAnimationFrame(() => {
                 navbar.style.opacity = '1';
-            }, 100);
+            });
         }
-
-        // Masque l'intro et affiche le contenu principal
+        
         introSection.classList.add('intro-hidden');
-        mainContent.classList.remove('hidden'); // Retire la classe hidden
+        mainContent.classList.remove('hidden');
         mainContent.style.display = 'block';
-        document.body.style.overflow = ''; // Réactive le défilement
+        document.body.style.overflow = '';
         window.scrollTo(0, 0);
-
-        // Une fois la transition terminée, cache complètement l'intro
+        
         setTimeout(() => {
             introSection.style.display = 'none';
         }, 800);
     }
-
-    // Initialisation
-    showIntro();
-
-    // Event listeners
-    enterButton.addEventListener('click', showContent);
     
-    if (backButton) {
-        backButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            showIntro();
-        });
+    function init() {
+        cacheElements();
+        showIntro();
+        
+        elements.enterButton?.addEventListener('click', showContent, { passive: true });
+        
+        if (elements.backButton) {
+            elements.backButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                showIntro();
+            }, { passive: false });
+        }
     }
-}); 
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})(); 
